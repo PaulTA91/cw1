@@ -25,5 +25,32 @@ class Dec2Hex
 	System.out.println("Ending Program");
 
     }
+
+		public static int validateInput() {
+		int input = 0;
+		boolean valid;
+		Scanner sc = new Scanner(System.in);
+
+		do {
+			valid = true;
+			System.out.println("Please enter a positive integer to convert to hexadecimal: ");
+
+			if (sc.hasNextInt()) {
+				input = sc.nextInt();
+				sc.nextLine();
+
+				if (input <= 0) {
+					System.out.println("Input not recognized. Try again.");
+					valid = false;
+				}
+
+			} else {
+				System.out.println("Input not recognized. Try again.");
+				valid = false;
+				sc.next();
+			}
+		} while (!valid);
+		return input;
+	}
 }
 
