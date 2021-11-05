@@ -7,10 +7,18 @@ class Dec2Hex {
 			System.out.print("No input detected. Try Again.");
 			return;
 		}
-		if (Arg1 != Integer.parseInt(args[0])) {
-			System.out.println("Value must be a positive Int");
-			return;
-		} else if (Arg1 <= 0) {
+		
+		
+		
+		try {
+			  Arg1 = Integer.parseInt(args[0]);
+			  //parseInt succeded
+			} catch(NumberFormatException e)
+			{
+			   //parseInt failed
+			}
+		
+		if (Arg1 <= 0) {
 			System.out.println("Value must be a positive Int");
 			return;
 		}
