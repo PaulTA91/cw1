@@ -2,7 +2,7 @@ class Dec2Hex {
 
 	public static int Arg1;
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		if (args.length == 0) {
 			System.out.print("No input detected. Try Again.");
 			return;
