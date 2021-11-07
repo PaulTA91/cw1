@@ -2,15 +2,18 @@ class Dec2Hex {
 
     public static int Arg1;
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-	if(args[0] == null){
-            System.out.print("No input detected. Try Again.\n");
+        try {
+            if (!validateInput(args[0])) {
+                System.out.println("Input invalid. Must be a positive integer.");
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("No input Detected, try again.");
         }
 
-        if(!validateInput(args[0])){
-            System.out.println("Input invalid. Must be a positive integer.");
-        }
+
     }
 
     public static boolean validateInput(String input) {
