@@ -3,32 +3,36 @@ class Dec2Hex {
     public static int Arg1;
 
     public static void main(String[] args) {
-        try {
-            if (args.length == 0) {
-                System.out.print("No input detected. Try Again.\n");
-                return;
-            }
-        } catch (NumberFormatException e) {
+
+        if(!validateInput(args[0])){
+            System.out.println("Input invalid. Must be a positive integer.");
         }
-
-        if (validateInput(args[0]) == true) {
-            convertInput(args[0]);
-        }
-
-
     }
 
-    public static boolean validateInput(String args) {
+    public static boolean validateInput(String input) {
         boolean valid;
+
         try {
-            Arg1 = Integer.parseInt(args);
-            valid = true;
-            if (Arg1 <= 0) {
-                System.out.println("Value must be a positive Int");
+            if (input.length() == 0) {
+                System.out.print("No input detected. Try Again.\n");
             }
         } catch (NumberFormatException e) {
             valid = false;
         }
+
+        try {
+            Arg1 = Integer.parseInt(input);
+            valid = true;
+            if (Arg1 <= 0) {
+                System.out.println("Value must be a positive Int");
+            }
+            else{
+                convertInput(input);
+            }
+        } catch (NumberFormatException e) {
+            valid = false;
+        }
+
         return valid;
     }
 
