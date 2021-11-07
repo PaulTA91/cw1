@@ -4,6 +4,10 @@ class Dec2Hex {
 
     public static void main(String[] args) {
 
+	if(args[0] == null){
+            System.out.print("No input detected. Try Again.\n");
+        }
+
         if(!validateInput(args[0])){
             System.out.println("Input invalid. Must be a positive integer.");
         }
